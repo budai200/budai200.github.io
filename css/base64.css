@@ -13,13 +13,20 @@ body {
 	border-radius: 5px;
 	border: 0px;
 	margin-bottom: 10px;
+	margin-top: 90px;
+	transition: all 0.06s;
 }
 #my5_a {
+	opacity: 0;
 	margin-top: 60px;
+	transition: all 0.06s;
+	
 }
 #my5_b {
+	opacity: 0;
 	margin-top: 40px;
 	margin-bottom: 100px;
+	transition: all 0.06s;
 }
 
 .my5_title {
@@ -39,7 +46,8 @@ body {
 	border-radius: 50px;
 	border: 0px;
 	outline:0;
-	transition-duration: 0.5s;
+	margin-top: 90px;
+	transition-duration: 0.06s;
 }
 #my5_a_up, #my5_b_up {
 	width: 33px;
