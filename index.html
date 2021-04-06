@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="img/title.ico" rel="icon" type="image/x-ico">
+		<link rel="stylesheet" type="text/css" href="css/all.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base64.css"/>
+		<script src="js/base64.js"></script>
+		<script src="js/jquery-1.8.0.js"></script>
+		<script src="js/the_show.js"></script>
+		<script> window.onload = now_item('div_base64'); </script>
+		<title>Base64 在线解码编码 | Base64 解密加密</title>
+	</head>
+	<body>
+		<iframe id="head_frame" src="all_head.html" frameborder="0"></iframe>
+		<img id="img_list" src="img/b/b_list.png" onclick="show()"/>
+		<p id="the_botton">©2019-2021 - Bu Dai</p>
+		<div id="pan">
+			<div id="pan12">
+				<textarea placeholder="Ctrl+V 粘贴" id="my5_in" onscroll="this.rows++;" rows="1" onclick="clickInput()"></textarea>
+				<button id="my5_x" onclick="xxx()">清空</button>
+				<script>
+					document.getElementById("my5_in").focus()
+				</script>
+				<div id="my5_a">
+					<span class="my5_title">解码</span>
+					<button id="my5_a_up" title="粘贴到输入框" onclick="upA()">▲</button>
+					<button id="my5_a_copy" onclick="copyTextA()">复制</button>
+					<img id="my5_yes_a" src="img/base64/yes.png" />
+					<p id="my5_a_text">(等待输入)</p>
+				</div>
+				<div id="my5_b">
+					<span class="my5_title">编码</span>
+					<button id="my5_b_up" title="粘贴到输入框" onclick="upB()">▲</button>
+					<button id="my5_b_copy" onclick="copyTextB()">复制</button>
+					<img id="my5_yes_b" src="img/base64/yes.png" />
+					<p id="my5_b_text">(等待输入)</p>
+				</div>
+				<script>
+					function changee() {
+						document.getElementById("my5_yes_a").style.width = "0px";
+						document.getElementById("my5_yes_b").style.width = "0px";
+						var a = ''
+						var b = ''
+						try {
+							a = Base64.decode($('#my5_in').val());
+						} catch(err) { }
+						try {
+							b = Base64.encode($('#my5_in').val());
+						} catch(err) { }
+						document.getElementById('my5_a_text').innerHTML = a;
+						document.getElementById('my5_b_text').innerHTML = b;
+					}
+					$('#my5_in').bind('input propertychange','textarea',function() {
+						document.getElementById("my5_yes_a").style.width = "0px";
+						document.getElementById("my5_yes_b").style.width = "0px";
+						var a = ''
+						var b = ''
+						try {
+							a = Base64.decode($('#my5_in').val());
+						} catch(err) { }
+						try {
+							b = Base64.encode($('#my5_in').val());
+						} catch(err) { }
+						document.getElementById('my5_a_text').innerHTML = a;
+						document.getElementById('my5_b_text').innerHTML = b;
+					});
+					function clickInput() {
+						document.getElementById("my5_yes_a").style.width = "0px";
+						document.getElementById("my5_yes_b").style.width = "0px";
+					}
+					function copyTextA() {
+						document.getElementById("my5_yes_a").style.width = "15px";
+						document.getElementById("my5_yes_b").style.width = "0px";
+						var text = document.getElementById("my5_a_text").innerText;
+						var input = document.getElementById("my5_input_a");
+						input.value = text;
+						input.select();
+						document.execCommand("copy");
+					}
+					function copyTextB() {
+						document.getElementById("my5_yes_b").style.width = "15px";
+						document.getElementById("my5_yes_a").style.width = "0px";
+						var text = document.getElementById("my5_b_text").innerText;
+						var input = document.getElementById("my5_input_b");
+						input.value = text;
+						input.select();
+						document.execCommand("copy");
+					}
+					function upA() {
+						var text = document.getElementById("my5_a_text").innerText;
+						var input = document.getElementById("my5_in");
+						input.value = text;
+						changee()
+						input.focus()
+					}
+					function upB() {
+						var text = document.getElementById("my5_b_text").innerText;
+						var input = document.getElementById("my5_in");
+						input.value = text;
+						changee()
+						input.focus()
+					}
+					function xxx() {
+						var input = document.getElementById("my5_in");
+						input.value = '';
+						input.rows = 1;
+						changee()
+						input.focus()
+						document.getElementById('my5_a_text').innerHTML = '(等待输入)';
+						document.getElementById('my5_b_text').innerHTML = '(等待输入)';
+					}
+				</script>
+				<textarea id="my5_input_a"></textarea>
+				<textarea id="my5_input_b"></textarea>
+			</div>
+		</div>
+	</body>
+</html>

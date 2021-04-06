@@ -1,0 +1,129 @@
+body {
+	padding-top: 120px;
+}
+
+#my5_in {
+	overflow-y: hidden;
+	width: 50%;
+	height: auto;
+	font-size: 20px;
+	resize: none;
+	overflow-y:visible;
+	padding: 10px;
+	border-radius: 5px;
+	border: 0px;
+	margin-bottom: 10px;
+}
+#my5_a {
+	margin-top: 60px;
+}
+#my5_b {
+	margin-top: 40px;
+	margin-bottom: 100px;
+}
+
+.my5_title {
+	user-select: none;
+	float: left;
+	margin-left: 23%;
+	font-size: 30px;
+}
+#my5_x {
+	width: 43px;
+	height: 43px;
+	margin-left: 10px;
+	user-select: none;
+	vertical-align: top;
+	background-color: #505050;
+	color: #ffffff;
+	border-radius: 50px;
+	border: 0px;
+	outline:0;
+	transition-duration: 0.5s;
+}
+#my5_a_up, #my5_b_up {
+	width: 33px;
+	height: 33px;
+	margin-left: 10px;
+	margin-top: 5px;
+	user-select: none;
+	float: left;
+	background-color: #505050;
+	color: #ffffff;
+	border-radius: 12px;
+	border: 0px;
+	outline:0;
+	transition-duration: 0.5s;
+}
+#my5_a_copy, #my5_b_copy {
+	width: 50px;
+	height: 33px;
+	margin-left: 10px;
+	margin-top: 5px;
+	user-select: none;
+	float: left;
+	background-color: #505050;
+	color: #ffffff;
+	border-radius: 12px;
+	border: 0px;
+	outline:0;
+	transition-duration: 0.5s;
+}
+#my5_x:hover, #my5_a_copy:hover, #my5_b_copy:hover, #my5_a_up:hover, #my5_b_up:hover {
+    background-color: #888888;
+    color: white;
+	box-shadow: 0 0 0 3px rgba(0,0,0,0.2);
+	transition-duration: 0.5s;
+}
+#my5_a_copy:active, #my5_b_copy:active {
+	transform: translateY(3px);
+	transition-duration: 0.05s;
+}
+#my5_a_up:active, #my5_b_up:active {
+	transform: translateY(-3px);
+	transition-duration: 0.05s;
+}
+#my5_x:active {
+	transform: translateX(-3px);
+	transition-duration: 0.05s;
+}
+
+#my5_a_text, #my5_b_text {
+	margin: auto;
+	word-wrap: break-word;
+	display: block;
+	clear: both;
+	width: 54%;
+	text-align: left;
+	padding-top: 10px;
+	font-size: 16px;
+	height: auto;
+	min-height: 22px;
+}
+
+
+@media screen and (max-width: 1000px) { 
+	#my5_in {
+		width: 70%;
+	}
+	.my5_title {
+		margin-left: 12%;
+	}
+	#my5_a_text, #my5_b_text {
+		width:76%;
+	}
+} 
+
+#my5_input_a, #my5_input_b {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: -10;
+}
+#my5_yes_a, #my5_yes_b {
+	width: 0px;
+	float: left;
+	margin-left: 10px;
+}
+

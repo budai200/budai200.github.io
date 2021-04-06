@@ -1,0 +1,52 @@
+* {
+	transition: all 0.3s;
+	user-select: none;
+}
+body {
+	margin: 0;
+}
+
+
+.app, .web {
+	cursor: pointer;
+	height: 50px;
+	padding-left: 20px;
+	padding-right: 15px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+}
+.app > img, .web > img {
+	height: 50px;
+}
+.app > b {
+	position: relative;
+	vertical-align: top;
+	top: 15px;
+	height: 50px;
+	font-size: 15px;
+}
+.web > p > b {
+	font-size: 15px;
+}
+.app:hover, .web:hover {
+	background-color: #EEEEEE;
+	padding-left: 25px;
+}
+
+
+#img_back {
+	height: 18px;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+#div_back {
+	cursor: pointer;
+	height: 60px;
+}
+#div_back:hover {
+	background-color: #EEEEEE;
+}
+#div_back:hover > #img_back {
+	padding-right: 8px;
+}
