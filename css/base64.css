@@ -6,7 +6,7 @@ body {
 	margin-top: 0px;
 	margin-bottom: 10px;
 	font-size: 15px;
-	width: calc(50% + 53px);
+	width: calc(50% + 33px);
 	margin-left: 3px;
 	transition: all 0s;
 }
@@ -43,7 +43,7 @@ body {
 	font-size: 30px;
 }
 #my5_x {
-	width: 43px;
+	width: 63px;
 	height: 43px;
 	margin-left: 10px;
 	user-select: none;
@@ -127,7 +127,7 @@ body {
 		width:76%;
 	}
 	#my5_ppp {
-		width: calc(30% + 53px);
+		width: calc(30% + 33px);
 	}
 } 
 
