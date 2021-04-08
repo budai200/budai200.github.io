@@ -24,7 +24,7 @@
 				<textarea placeholder="Ctrl+V 粘贴" id="my5_in" onscroll="this.rows++;" rows="5" onclick="clickInput()"></textarea>
 				<button id="my5_x" onclick="xxx()">清 空</button>
 				<script>
-					document.getElementById("my5_in").focus()
+					document.getElementById("my5_in").focus();
 				</script>
 				<div id="my5_a">
 					<span class="my5_title">解码</span>
@@ -41,6 +41,12 @@
 					<p id="my5_b_text">(等待输入)</p>
 				</div>
 				<script>
+					function do_show() {
+						document.getElementById("my5_a").style.opacity = "1";
+						document.getElementById("my5_b").style.opacity = "1";
+						document.getElementById("my5_ppp").style.marginTop = "-100px";
+						document.getElementById("my5_ppp").style.opacity = "0";
+					}
 					function changee() {
 						document.getElementById("my5_yes_a").style.width = "0px";
 						document.getElementById("my5_yes_b").style.width = "0px";
@@ -69,10 +75,7 @@
 						} catch(err) { }
 						document.getElementById('my5_a_text').innerHTML = a;
 						document.getElementById('my5_b_text').innerHTML = b;
-						document.getElementById("my5_a").style.opacity = "1";
-						document.getElementById("my5_b").style.opacity = "1";
-						document.getElementById("my5_ppp").style.marginTop = "-100px";
-						document.getElementById("my5_ppp").style.opacity = "0";
+						do_show()
 						history.pushState(null,null,'#' + mycode);
 					});
 					function clickInput() {
@@ -97,21 +100,20 @@
 						input.select();
 						document.execCommand("copy");
 					}
-					function upA() {
-						var text = document.getElementById("my5_a_text").innerText;
+					function change_text(text) {
 						var input = document.getElementById("my5_in");
 						input.value = text;
 						changee()
 						input.focus()
 						history.pushState(null,null,'#' + text);
 					}
+					function upA() {
+						var text = document.getElementById("my5_a_text").innerText;
+						change_text(text)
+					}
 					function upB() {
 						var text = document.getElementById("my5_b_text").innerText;
-						var input = document.getElementById("my5_in");
-						input.value = text;
-						changee()
-						input.focus()
-						history.pushState(null,null,'#' + text);
+						change_text(text)
 					}
 					function xxx() {
 						var input = document.getElementById("my5_in");
@@ -130,10 +132,16 @@
 						var input = document.getElementById("my5_in");
 						input.value = now_code;
 						changee()
-						document.getElementById("my5_a").style.opacity = "1";
-						document.getElementById("my5_b").style.opacity = "1";
-						document.getElementById("my5_ppp").style.marginTop = "-100px";
-						document.getElementById("my5_ppp").style.opacity = "0";
+						do_show()
+					} else {
+						(async () => {
+							try {
+								const text = await navigator.clipboard.readText();
+								change_text(text)
+								history.pushState(null,null,'#' + text);
+								do_show()
+							} catch { }
+						})();
 					}
 				</script>
 				<textarea id="my5_input_a"></textarea>
