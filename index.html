@@ -103,6 +103,7 @@
 						input.value = text;
 						changee()
 						input.focus()
+						history.pushState(null,null,'#' + text);
 					}
 					function upB() {
 						var text = document.getElementById("my5_b_text").innerText;
@@ -110,6 +111,7 @@
 						input.value = text;
 						changee()
 						input.focus()
+						history.pushState(null,null,'#' + text);
 					}
 					function xxx() {
 						var input = document.getElementById("my5_in");
