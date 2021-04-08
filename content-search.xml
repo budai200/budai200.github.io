@@ -1,0 +1,4 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>BASE64.ONE</ShortName>
+<Url type="text/html" template="https://base64.one/#{searchTerms}"/>
+</OpenSearchDescription>

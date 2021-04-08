@@ -11,11 +11,7 @@ function not_show() {
 
 
 function now_item(name) {
-	return function () {
-		document.getElementById('head_frame')
-		.contentWindow.document.getElementById(name)
-		.style.background = "#EEEEEE";
-	}
+	document.getElementById('head_frame').contentWindow.document.getElementById(name).style.background = "#EEEEEE";
 }
 
 
@@ -27,3 +23,4 @@ function in_to(name) {
 function in_to_the(name) {
 	window.top.open(name,'_self')
 }
+
