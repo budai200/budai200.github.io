@@ -153,7 +153,7 @@
 				var now_code = the_url.match(patt);
 				if (now_code != null) {
 					try {
-						now_code = now_code.substring(1);
+						now_code = new String(now_code).substring(1);
 					} catch(err) {
 						now_code = null;
 					}
